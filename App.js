@@ -3,13 +3,22 @@ mongoose.connect('mongodb+srv://adisornsriphongthong:0953314906Get*@cluster0.0f5
 
 const Cat = mongoose.model('Cat', { name: String });
 
-Cat.find()
+const y = Cat.find()
   .then(data => {
-    console.log(data);
+    return data
   })
   .catch(error => {
     console.error(error);
   });
+
+y.then(result => {
+    result.forEach(e => {
+        console.log(e.length)
+    })
+})
+
+
+
 
 
 /*const kitty = new Cat({ name: 'Zildjian' });
